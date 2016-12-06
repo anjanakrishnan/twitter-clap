@@ -1,10 +1,11 @@
 class StaticPagesController < ApplicationController
   def index
-    @user = User.new
+    
     if user_signed_in?
      @user = User.all  
     end
-    
+
+    @company = Company.new
   end
 
   def home
@@ -12,5 +13,7 @@ class StaticPagesController < ApplicationController
 
   def help
   end
+
+
 end
 
