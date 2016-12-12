@@ -6,12 +6,14 @@ Rails.application.routes.draw do
    get '/users/sign_out' => 'devise/sessions#destroy'
   end 
   resources :companies 
+  post '/users/create' => 'users#create', :as => :create_users
   resources :users 
-   
+  
   get 'static_pages/home'
   get 'static_pages/help'
-  get 'static_pages/dashboard'
+  get 'user_mailer/send_email' 
   get '/help' => "static_pages#help"
+ 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
