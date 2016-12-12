@@ -1,4 +1,9 @@
 <% if user_signed_in? %>
+
+	
+
+  <%= render 'admin' %>
+
   <% if current_user.company_id.nil? %>
     Signed in as <%= current_user.name %>. Not you?
     <%= form_for (@company) do |f| %>
@@ -14,6 +19,7 @@
   <% else %>
     <%= render 'dashboard'%>
   <% end %>
+
 <% else %>
  
   <%= link_to "Sign in via Twitter", user_twitter_omniauth_authorize_path %>  or 

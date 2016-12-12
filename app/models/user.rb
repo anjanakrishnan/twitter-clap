@@ -20,9 +20,23 @@ class User < ApplicationRecord
                             uid:auth.uid,
                             email:auth.uid+"@twitter.com",
                             password:Devise.friendly_token[0,20],
+                            token: auth.credentials.token,
+                            secret: auth.credentials.secret,
                           )
+       
+
       end
 
+    end
+  end
+
+  def twitter
+
+    @client ||= Twitter::REST::Client.new do |config|
+      config.consumer_key        = Rails.application.secrets.twitter_api_key
+      config.consumer_secret     = Rails.application.secrets.twitter_api_secret
+      config.access_token        = token
+      config.access_token_secret = secret
     end
   end
 end

@@ -12,11 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161208120359) do
 
-  create_table "checks", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "tweets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "message"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -41,9 +39,14 @@ ActiveRecord::Schema.define(version: 20161208120359) do
     t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
+
+    t.string   "token"
+    t.string   "secret"
+
     t.integer  "company_id"
     t.string   "user_email"
     t.string   "role"
+
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
