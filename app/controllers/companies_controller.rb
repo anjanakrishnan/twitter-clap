@@ -1,6 +1,8 @@
 class CompaniesController < ApplicationController
   def index
     @company = Company.new
+    @user = User.new
+    
   end
     def create
       @company = Company.new(company_params)
@@ -8,13 +10,22 @@ class CompaniesController < ApplicationController
       @user = current_user
       last_id = Company.maximum('id')
       @user.update(company_id: last_id)
-      redirect_to static_pages_dashboard_path
+      @user.update!(user_email: user_params[:user_email])
+      @user.update!(role: user_params[:role])
+      render :template => '/static_pages/_dashboard'
+
   end
   def company
   end
+  def user
+  end
+
 
     private
     def company_params
       params.require(:company).permit(:name)
+    end
+    def user_params
+      params.require(:user).permit(:user_email, :role)      
     end
 end

@@ -58,6 +58,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "twitter-clap_#{Rails.env}"
   # config.active_job.queue_name_prefix = "twitter_#{Rails.env}"
 
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
