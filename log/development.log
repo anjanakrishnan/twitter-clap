@@ -41328,3 +41328,123 @@ Processing by StaticPagesController#index as HTML
 Completed 200 OK in 68ms (Views: 62.8ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:07:44 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 29]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (15.3ms)
+  Rendered static_pages/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 356ms (Views: 309.6ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-12-13 10:07:51 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lHXy8X1hiiUv507eLCtrLlen3fyXu8f2MBgQXCKMZJLa41f+ImiNy0XrGV5eyKdNTf/HLXNxtrVjT/x5+8+4VA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:07:51 +0530
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 63ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-13 10:07:53 +0530
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-13 10:07:57 +0530
+Started GET "/users/auth/twitter/callback?oauth_token=o4bVTQAAAAAAyMmCAAABWPZ5D_c&oauth_verifier=IUP8FgJxidFquqe3ZXRQBFcT7LL1HzKa" for 127.0.0.1 at 2016-12-13 10:08:02 +0530
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"o4bVTQAAAAAAyMmCAAABWPZ5D_c", "oauth_verifier"=>"IUP8FgJxidFquqe3ZXRQBFcT7LL1HzKa"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from twitter at /home/anjana/twitter-clap/app/controllers/omniauth_callbacks_controller.rb:3)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "3699463212"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-12-13 04:38:08 UTC], ["last_sign_in_at", 2016-12-13 04:29:31 UTC], ["sign_in_count", 3], ["updated_at", 2016-12-13 04:38:08 UTC], ["id", 29]]
+  [1m[35m (110.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 122ms (ActiveRecord: 111.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:08:08 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 29]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (6.0ms)
+  Rendered static_pages/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 100ms (Views: 96.3ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35mSQL (95.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-12-13 10:08:46 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rBfgBSHzQsT8nIpYW6/8bBUhx1mzhczFRvR/5cx6ScqYW39LGDemIv8Uj3bB8MOhOndaE1FvnMwZkUpEtcMhbA=="}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:08:46 +0530
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 102ms (Views: 96.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-13 10:08:49 +0530
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-13 10:08:53 +0530
+Started GET "/users/auth/twitter/callback?oauth_token=JZn_MQAAAAAAyMmCAAABWPZ57cI&oauth_verifier=PGpZFTpwlzYHY8TdeHa6uvq0mERYjN7m" for 127.0.0.1 at 2016-12-13 10:08:58 +0530
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"JZn_MQAAAAAAyMmCAAABWPZ57cI", "oauth_verifier"=>"PGpZFTpwlzYHY8TdeHa6uvq0mERYjN7m"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from twitter at /home/anjana/twitter-clap/app/controllers/omniauth_callbacks_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "3699463212"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "3699463212@twitter.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "3699463212@twitter.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at", "provider", "uid", "token", "secret") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "3699463212@twitter.com"], ["encrypted_password", "$2a$11$i91MOube8gsawFHJ3SMwdeBKcz04NoBw9shAsTVP3vpzVw2gMtc1a"], ["name", "Anjana Krishnan"], ["created_at", 2016-12-13 04:39:04 UTC], ["updated_at", 2016-12-13 04:39:04 UTC], ["provider", "twitter"], ["uid", "3699463212"], ["token", "3699463212-XYh09JdJrNl3wp6GLeKcvgn1iroSYlATapc88C8"], ["secret", "hhxTouyduwOlGiHN6n4qYcJJGxBm66rJVjyccvBYxoBSo"]]
+  [1m[35m (64.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-12-13 04:39:04 UTC], ["last_sign_in_at", 2016-12-13 04:39:04 UTC], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", 2016-12-13 04:39:04 UTC], ["id", 31]]
+  [1m[35m (62.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 417ms (ActiveRecord: 129.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:09:04 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 31]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2016-12-13 10:09:13 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9ZNU6nDU8oMB+tj5KRNMC5s1tMhChuUCez7g+sPTuC2bfOPex6U+LX+YtlOFQb1kCbBswzkFFlLaqFr9otx+xg==", "company"=>{"name"=>"red panthers"}, "user"=>{"user_email"=>"anjanakrish.p@gmail.com", "role"=>"admin"}, "commit"=>"OK"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "red panthers"], ["created_at", 2016-12-13 04:39:13 UTC], ["updated_at", 2016-12-13 04:39:13 UTC]]
+  [1m[35m (177.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("companies"."id") FROM "companies"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "company_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["company_id", 110], ["updated_at", 2016-12-13 04:39:13 UTC], ["id", 31]]
+  [1m[35m (80.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "user_email" = ? WHERE "users"."id" = ?[0m  [["updated_at", 2016-12-13 04:39:14 UTC], ["user_email", "anjanakrish.p@gmail.com"], ["id", 31]]
+  [1m[35m (83.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "role" = ? WHERE "users"."id" = ?[0m  [["updated_at", 2016-12-13 04:39:14 UTC], ["role", "admin"], ["id", 31]]
+  [1m[35m (72.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering static_pages/_admin.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 486ms (Views: 47.7ms | ActiveRecord: 415.5ms)
+
+
