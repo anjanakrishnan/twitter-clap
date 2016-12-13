@@ -1,17 +1,18 @@
 class UsersController < ApplicationController
 
  def index
-   @email = User.new
  end
-
- def email
+ 
+ def new
+  @user = User.new
  end
-
+ 
  def create
+  redirect_to root_url
  end
 
   private
     def email_params
-      params.require(:user).permit(:user_email)
+      params.require(:user).permit(:email)
     end
 end

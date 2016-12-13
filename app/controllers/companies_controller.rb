@@ -1,10 +1,10 @@
 class CompaniesController < ApplicationController
   def index
     @company = Company.new
-    @user = User.new
-    
+    @user = User.new   
   end
-    def create
+
+  def create
       @company = Company.new(company_params)
       @company.save
       @user = current_user
@@ -12,15 +12,11 @@ class CompaniesController < ApplicationController
       @user.update(company_id: last_id)
       @user.update!(user_email: user_params[:user_email])
       @user.update!(role: user_params[:role])
-      render :template => '/static_pages/_dashboard'
+      render :template => '/static_pages/_admin'
 
   end
   def company
   end
-  def user
-  end
-
-
     private
     def company_params
       params.require(:company).permit(:name)

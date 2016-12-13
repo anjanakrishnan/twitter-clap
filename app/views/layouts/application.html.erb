@@ -11,27 +11,15 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
       </script>
     <![endif]-->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
 
-        <%= link_to "Twitter Clap", '#', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-           <% if user_signed_in? %>
-              Welcome <%= current_user.name %>
-              <%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
-           <% else %>
-              <%= link_to "Sign up", new_user_registration_path %> or
-              <%= link_to "Sign in", new_user_session_path %>
-              <%= link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path %>
-            <% end %>
-          </ul>
-        </nav>
-
+  
       <% if user_signed_in? %>
-        <%= link_to "Twitter Clapp", '#', id: "logo" %>
+        <%= link_to "Twitter Clap", '#', id: "logo" %>
           <nav>
             <ul class="nav navbar-nav navbar-right">
               <li><%= link_to "Logout", destroy_user_session_path,:method => :delete %></li>
@@ -39,7 +27,7 @@
             </ul>
           </nav>
         <% else %>
-        <%= link_to "Twitter Clapp", '#', id: "logo" %>
+        <%= link_to "Twitter Clap", '#', id: "logo" %>
           <nav>
             <ul class="nav navbar-nav navbar-right">
               <li><%= link_to "Sign in via Twitter", user_twitter_omniauth_authorize_path %></li>
