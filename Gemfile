@@ -34,7 +34,15 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter' 
 gem 'twitter-bootstrap-rails'
+
+gem 'actionmailer'
+gem "letter_opener", :group => :development
+
 gem 'twitter', '~> 5.3.1'
+
+gem 'devise_invitable', '~> 1.7.0'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

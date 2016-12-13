@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207121649) do
+ActiveRecord::Schema.define(version: 20161208120359) do
+
+  create_table "checks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tweets", force: :cascade do |t|
     t.integer  "user_id"
@@ -35,6 +48,9 @@ ActiveRecord::Schema.define(version: 20161207121649) do
     t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
+    t.integer  "company_id"
+    t.string   "user_email"
+    t.string   "role"
     t.string   "token"
     t.string   "secret"
     t.index ["email"], name: "index_users_on_email", unique: true

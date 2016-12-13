@@ -10,6 +10,7 @@ module TwitterClap
   class Application < Rails::Application
 
     config.paths['app/views'] << "app/views/devise"
+ 
 
   end
 end
