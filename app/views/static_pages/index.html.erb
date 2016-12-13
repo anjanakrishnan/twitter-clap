@@ -1,11 +1,5 @@
 <% if user_signed_in? %>
-
-	
-
-  <%= render 'admin' %>
-
   <% if current_user.company_id.nil? %>
-    Signed in as <%= current_user.name %>. Not you?
     <%= form_for (@company) do |f| %>
       <%= f.label :name, "Company Name" %>
       <%= f.text_field :name, class: "form-control" %>
@@ -17,7 +11,7 @@
     <% end %>
     <% end %>
   <% else %>
-    <%= render 'dashboard'%>
+    <%= render 'admin'%>
   <% end %>
 
 <% else %>
