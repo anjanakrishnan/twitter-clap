@@ -6,14 +6,11 @@ Rails.application.routes.draw do
    get '/users/sign_out' => 'devise/sessions#destroy'
 
   end    
-  
-  get 'static/user'
-  resources :tweets
-
-  end 
-  resources :companies 
   post '/users/create' => 'users#create', :as => :create_users
+  post '/tweets/create' => 'tweets#create', :as => :create_tweets
   resources :users 
+  resources :tweets
+  resources :companies 
   
   get 'static_pages/home'
   get 'static_pages/help'

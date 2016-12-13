@@ -1,24 +1,11 @@
 class StaticPagesController < ApplicationController
   def index
     if user_signed_in?
-
-      @user = User.all  
+      @user = User.all
+      @new_tweets = Tweet.where(:user_id => current_user.id).reverse 
     end
     @company = Company.new
     @user = User.new
-    @email = User.new
-
-     @user = User.all
-      @twitter=Tweet.where(:user_id => current_user.id).reverse
-    end
-
-
-    @tweet=Tweet.new
-   
-
-    @company = Company.new
-
-
   end
 
   def home
