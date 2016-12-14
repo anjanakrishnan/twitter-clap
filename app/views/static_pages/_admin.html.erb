@@ -20,8 +20,6 @@
             <%= form_for (@user), :url => create_users_path(@user), :html => {:method => :post} do |f| %>
               <%= f.label :user_email, "email" %>   
               <%= f.text_field :user_email, class: "form-control" %>
-              <%= f.hidden_field :company_id, value: current_user.company_id %>
-              <%= f.hidden_field :role, value: "user" %>
               <br>
               <%= f.submit "OK",class: 'btn btn-primary' %>
             <% end %>          

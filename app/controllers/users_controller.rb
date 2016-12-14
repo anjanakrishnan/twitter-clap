@@ -8,11 +8,14 @@ class UsersController < ApplicationController
  end
  
  def create
+  @user = User.new(email_params)
+  @user.save
+  UserMailer.welcome_email(@user).deliver_now
   redirect_to root_url
  end
 
   private
     def email_params
-      params.require(:user).permit(:email)
+      params.require(:user).permit(:user_email)
     end
 end
