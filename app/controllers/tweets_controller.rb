@@ -1,12 +1,11 @@
 class TweetsController < ApplicationController
 
-	respond_to :html
 	def new
     @newtweet = Tweet.new
   end
 
   def show  		
-  	respond_with(@tweet)
+  	
   end
   
   def index
@@ -15,10 +14,11 @@ class TweetsController < ApplicationController
   end
   def create
   	@tweet = Tweet.new(twitter_params)
+    @tweet.autoretweet=params[:autoretweet]
   	@tweet.user_id = current_user.id 
   	@tweet.save
-  	respond_with(@tweet)
-  	#redirect_to root_path
+  	
+  	redirect_to root_path
     #current_user.tweet(twitter_params[:message])
   end
 
