@@ -1,9 +1,11 @@
 class UserMailer < ApplicationMailer
-   default from: "anjanakrish.p@gmail.com"
-
- def welcome_email(user)
-    @email = user
-    @url  = 'http://example.com/login'
-    mail(to: @email.user_email, subject: 'Welcome to My Awesome Site')
+    default from: 'nimmy@redpanthers.co'
+ 
+  def welcome_email(user,hash)
+    @user = user
+    @hash = hash
+    
+    @url  = 'http://localhost:3000/'+@hash
+    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
 end

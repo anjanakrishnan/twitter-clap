@@ -30,16 +30,14 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'devise'
+
 gem 'omniauth'
 gem 'omniauth-twitter' 
 gem 'twitter-bootstrap-rails'
-
 gem 'actionmailer'
 gem "letter_opener", :group => :development
-
 gem 'twitter', '~> 5.3.1'
-
+gem 'devise',           '~> 4.2'
 gem 'devise_invitable', '~> 1.7.0'
 
 

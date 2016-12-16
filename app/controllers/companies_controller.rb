@@ -10,9 +10,10 @@ class CompaniesController < ApplicationController
       @user = current_user
       last_id = Company.maximum('id')
       @user.update(company_id: last_id)
-      @user.update!(user_email: user_params[:user_email])
+      @user.update!(email: user_params[:email])
       @user.update!(role: user_params[:role])
-      render :template => '/static_pages/_admin'
+      redirect_to root_url
+      #render :template => '/static_pages/_admin'
 
   end
   def company
@@ -22,6 +23,6 @@ class CompaniesController < ApplicationController
       params.require(:company).permit(:name)
     end
     def user_params
-      params.require(:user).permit(:user_email, :role)      
+      params.require(:user).permit(:email, :role)      
     end
 end
