@@ -2,7 +2,8 @@ class TweetsController < ApplicationController
 
 	respond_to :html
 	def new
-    @newtweet = Tweet.new
+    @new_tweets = Tweet.new
+    @tweet = Tweet.new
   end
 
   def show  		
@@ -17,9 +18,9 @@ class TweetsController < ApplicationController
   	@tweet = Tweet.new(twitter_params)
   	@tweet.user_id = current_user.id 
   	@tweet.save
-  	respond_with(@tweet)
-  	#redirect_to root_path
+  	#respond_with(@tweet)
     #current_user.tweet(twitter_params[:message])
+    redirect_to root_url
   end
 
   private

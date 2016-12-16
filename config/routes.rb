@@ -7,13 +7,12 @@ Rails.application.routes.draw do
 
   end    
   post '/users/create' => 'users#create', :as => :create_users
-  post '/tweets/create' => 'tweets#create', :as => :create_tweets
   resources :users 
   resources :tweets
   resources :companies 
+
+  get '/' => 'static_pages#index'
   
-  get 'static_pages/home'
-  get 'static_pages/help'
   get 'user_mailer/send_email' 
   get '/help' => "static_pages#help"
  
