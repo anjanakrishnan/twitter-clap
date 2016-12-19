@@ -19,7 +19,8 @@ class User < ApplicationRecord
     if user
       return user
     else
-          user = User.create!(name:auth.extra.raw_info.name,
+      if hash.nil?
+        user = User.create!(name:auth.extra.raw_info.name,
                               provider:auth.provider,
                               uid:auth.uid,
                               email:auth.uid+"@twitter.com",
@@ -27,7 +28,19 @@ class User < ApplicationRecord
                               token: auth.credentials.token,
                               secret: auth.credentials.secret,
                             )
-
+         
+      else
+        user = User.where(:id_hash => hash).update(name:auth.extra.raw_info.name,
+                              provider:auth.provider,
+                              uid:auth.uid,
+                              password:Devise.friendly_token[0,20],
+                              token: auth.credentials.token,
+                              secret: auth.credentials.secret,
+                            )
+        user = User.where(:uid => auth.uid).first
+      end
+        
+               
     end
   end
 end

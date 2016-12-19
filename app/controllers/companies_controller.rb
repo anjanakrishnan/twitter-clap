@@ -13,8 +13,6 @@ class CompaniesController < ApplicationController
       @user.update!(email: user_params[:email])
       @user.update!(role: user_params[:role])
       redirect_to root_url
-      #render :template => '/static_pages/_admin'
-
   end
   def company
   end

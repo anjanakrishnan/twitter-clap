@@ -1,22 +1,17 @@
 Rails.application.routes.draw do
 
- devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", passwords: "passwords", confirmations: "confirmations" }
-  root to: 'static_pages#index'
-  devise_scope :user do  
-   get '/users/sign_out' => 'devise/sessions#destroy'
-
-  end    
-  post '/users/create' => 'users#create', :as => :create_users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", passwords: "passwords", confirmations: "confirmations" }
   resources :users 
   resources :tweets
   resources :companies 
 
-  get '/' => 'static_pages#index'
-  
-  get 'user_mailer/send_email' 
-  get '/help' => "static_pages#help"
+  devise_scope :user do  
+   get '/users/sign_out' => 'devise/sessions#destroy'
+  end 
+
+  root to: 'static_pages#index'   
+  post '/users/create' => 'users#create', :as => :create_users
+  get '/' => 'static_pages#index'  
  
-
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

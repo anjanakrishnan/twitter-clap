@@ -18,14 +18,6 @@ ActiveRecord::Schema.define(version: 20161215113550) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "invite_users", force: :cascade do |t|
-    t.string   "email"
-    t.integer  "company_id"
-    t.string   "role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tweets", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "message"
