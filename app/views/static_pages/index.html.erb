@@ -1,5 +1,4 @@
 <% if user_signed_in? %>
-
     <% if current_user.company_id.nil? %>
       <%= form_for (@company) do |f| %>
         <%= f.label :name, "Company Name" %>

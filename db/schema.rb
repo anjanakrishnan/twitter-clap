@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(version: 20161215113550) do
   create_table "tweets", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "autoretweet"
   end
 
   create_table "users", force: :cascade do |t|

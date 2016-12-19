@@ -41448,6 +41448,127 @@ Processing by CompaniesController#create as HTML
 Completed 200 OK in 486ms (Views: 47.7ms | ActiveRecord: 415.5ms)
 
 
+<<<<<<< HEAD
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:17:59 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 2843ms (Views: 2803.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-13 10:18:10 +0530
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-13 10:18:13 +0530
+Started GET "/users/auth/twitter/callback?oauth_token=4v49SwAAAAAAyMmCAAABWPaCc68&oauth_verifier=phyJK0Y4QEFm4RBJJe04YyJJWjB9tVQb" for 127.0.0.1 at 2016-12-13 10:18:17 +0530
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"4v49SwAAAAAAyMmCAAABWPaCc68", "oauth_verifier"=>"phyJK0Y4QEFm4RBJJe04YyJJWjB9tVQb"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from twitter at /home/nimmy/Desktop/new/twitter-clap/app/controllers/omniauth_callbacks_controller.rb:3)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "701829520551063553"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "701829520551063553@twitter.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "701829520551063553@twitter.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at", "provider", "uid", "token", "secret") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "701829520551063553@twitter.com"], ["encrypted_password", "$2a$11$RsrouQimXHl2EToq0dX5VOPjJFoVG9L/63Ta1MiWP/SmioE84cO1i"], ["name", "NIMMY J VIPIN"], ["created_at", 2016-12-13 04:48:20 UTC], ["updated_at", 2016-12-13 04:48:20 UTC], ["provider", "twitter"], ["uid", "701829520551063553"], ["token", "701829520551063553-Knh6zPlfDDNvq2urj8BQvY99HLjOaWn"], ["secret", "SdeKj1BV2hP2LKNzyi9Nz8z3BIG3hs8ecz3nkCwIsEKzm"]]
+  [1m[35m (160.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-12-13 04:48:21 UTC], ["last_sign_in_at", 2016-12-13 04:48:21 UTC], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", 2016-12-13 04:48:21 UTC], ["id", 32]]
+  [1m[35m (67.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 547ms (ActiveRecord: 233.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:18:21 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 149ms (Views: 100.8ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2016-12-13 10:18:37 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"To7qsObAbkzOLu/arTf+LwmdVo6eVhCA/Ok7HKfuaTF4cZjikQONgDAsvKynRB85ov5MvS5pqNq2Ilmqw9l3JA==", "company"=>{"name"=>"Redpanthers"}, "user"=>{"user_email"=>"nimmy@redpanthers.co", "role"=>"admin"}, "commit"=>"OK"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Redpanthers"], ["created_at", 2016-12-13 04:48:37 UTC], ["updated_at", 2016-12-13 04:48:37 UTC]]
+  [1m[35m (227.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("companies"."id") FROM "companies"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "company_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["company_id", 111], ["updated_at", 2016-12-13 04:48:38 UTC], ["id", 32]]
+  [1m[35m (67.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "user_email" = ? WHERE "users"."id" = ?[0m  [["updated_at", 2016-12-13 04:48:38 UTC], ["user_email", "nimmy@redpanthers.co"], ["id", 32]]
+  [1m[35m (57.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "role" = ? WHERE "users"."id" = ?[0m  [["updated_at", 2016-12-13 04:48:38 UTC], ["role", "admin"], ["id", 32]]
+  [1m[35m (84.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering static_pages/_admin.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 524ms (Views: 60.4ms | ActiveRecord: 440.2ms)
+
+
+Started POST "/tweets/create" for 127.0.0.1 at 2016-12-13 10:18:46 +0530
+Processing by TweetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pdfUnel4/ZiqQ6tRfehNVJa+qpET/1s55XgMBjaPuTqTKKbPnrseVFRB+Cd3m6xCPd2woqPA42Ovs26wUrinLw==", "tweet"=>{"message"=>""}, "commit"=>"tweet"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering tweets/create.html.erb within layouts/application
+  Rendered tweets/create.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 112ms (Views: 41.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:18:50 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (2.8ms)
+  Rendered static_pages/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/tweets/create" for 127.0.0.1 at 2016-12-13 10:18:56 +0530
+Processing by TweetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QKkiWwbq5TgYfQHVIP22RcWrNeZIN0wQWe3o6fdglYviGZVhPJun+rtstQa/ypJH6T9P+l5WAgZ1Fknpp7iMBA==", "tweet"=>{"message"=>"Hello"}, "commit"=>"tweet"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "tweets" ("user_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 32], ["message", "Hello"], ["created_at", 2016-12-13 04:48:56 UTC], ["updated_at", 2016-12-13 04:48:56 UTC]]
+  [1m[35m (95.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering tweets/create.html.erb within layouts/application
+  Rendered tweets/create.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1577ms (Views: 57.5ms | ActiveRecord: 97.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:19:06 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (4.1ms)
+  Rendered static_pages/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 54ms (Views: 49.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:43:13 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (14.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 296ms (Views: 254.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/static_pages/dashboard.html" for 127.0.0.1 at 2016-12-13 10:44:53 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/static_pages/dashboard.html"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+=======
 Started GET "/" for 127.0.0.1 at 2016-12-13 10:18:20 +0530
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by StaticPagesController#index as HTML
@@ -41865,6 +41986,7 @@ actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+>>>>>>> anjana/master
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
 web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
@@ -41890,6 +42012,84 @@ puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.2) lib/puma/server.rb:415:in `process_client'
 puma (3.6.2) lib/puma/server.rb:275:in `block in run'
 puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+<<<<<<< HEAD
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (28.5ms)
+  Rendered collection of /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [49 times] (30.3ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (52.0ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (179.6ms)
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:53:32 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (3.1ms)
+  Rendered static_pages/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 65ms (Views: 60.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:54:08 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (4.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 58ms (Views: 48.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:58:07 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (4.0ms)
+  Rendered static_pages/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 56ms (Views: 44.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-13 10:59:01 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (3.7ms)
+  Rendered static_pages/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 52ms (Views: 42.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-12-13 11:17:49 +0530
+Processing by UsersController#new as HTML
+Completed 406 Not Acceptable in 48ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not… nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.0.0.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+=======
   Rendering /home/anjana/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /home/anjana/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
   Rendered /home/anjana/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
@@ -47711,6 +47911,7 @@ activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_act
 activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
 actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
 actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+>>>>>>> anjana/master
 actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
 activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
 activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
@@ -47773,6 +47974,457 @@ puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.2) lib/puma/server.rb:415:in `process_client'
 puma (3.6.2) lib/puma/server.rb:275:in `block in run'
 puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+<<<<<<< HEAD
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.4ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.3ms)
+Started GET "/" for 127.0.0.1 at 2016-12-14 15:10:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (12.1ms)
+  Rendered static_pages/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 288ms (Views: 242.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 15:10:39 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I3IY1lH3YmIud0aBVHIxVUukRjEbCjzNUx6evjVqASJKF5RCWa+MfXZ49WXLJV51khY1mWKA/BGdLmK8FdPS3g==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com", "company_id"=>"111", "role"=>"user"}, "commit"=>"OK"}
+Unpermitted parameters: user_email, company_id, role
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 16.2ms
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (24.6ms)
+Started GET "/" for 127.0.0.1 at 2016-12-14 15:30:42 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (12.7ms)
+  Rendered static_pages/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 289ms (Views: 245.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 15:31:12 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uDg7Y8xoO+kZbth5G4SGu2xOABE2pdGYFou4LoEmF6/RXbf3xDDV9kFha52E0+mbtfxzuU8vEUTYu0QsoZ/EUw==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com", "company_id"=>"111", "role"=>"user"}, "commit"=>"OK"}
+Unpermitted parameters: user_email, company_id, role
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 16.5ms
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (26.1ms)
+Started GET "/" for 127.0.0.1 at 2016-12-14 15:33:36 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (7.0ms)
+  Rendered static_pages/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 75ms (Views: 63.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-14 15:46:23 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (5.1ms)
+  Rendered static_pages/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 60ms (Views: 48.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 15:55:59 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mE2rx2LWkpOEjy3AYbYAdX4s8qZX4w/vnfuNMZFM/rfxKCdTao58jNyAniT+4W9Vp56BDi5pzzNTy3EzsfUtSw==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com", "company_id"=>"111", "role"=>"user"}, "commit"=>"OK"}
+Unpermitted parameters: user_email, company_id, role
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 15.3ms
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (19.6ms)
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 15:59:33 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mE2rx2LWkpOEjy3AYbYAdX4s8qZX4w/vnfuNMZFM/rfxKCdTao58jNyAniT+4W9Vp56BDi5pzzNTy3EzsfUtSw==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com", "company_id"=>"111", "role"=>"user"}, "commit"=>"OK"}
+Unpermitted parameters: company_id, role
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 12.6ms
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (19.5ms)
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 15:59:38 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mE2rx2LWkpOEjy3AYbYAdX4s8qZX4w/vnfuNMZFM/rfxKCdTao58jNyAniT+4W9Vp56BDi5pzzNTy3EzsfUtSw==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com", "company_id"=>"111", "role"=>"user"}, "commit"=>"OK"}
+Unpermitted parameters: company_id, role
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 16.3ms
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (20.2ms)
+Started GET "/" for 127.0.0.1 at 2016-12-14 15:59:46 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (2.9ms)
+  Rendered static_pages/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 48ms (Views: 34.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 15:59:51 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x/x8fDT8hAiNYuFbwROdV2hn6gYTVjjR8hDwcr0U5TmumfDoPKRqF9VtUr9eRPJ3sdWZrmrc+A08IAxwna02xQ==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com", "company_id"=>"111", "role"=>"user"}, "commit"=>"OK"}
+Unpermitted parameters: company_id, role
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 14.6ms
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (20.3ms)
+Started GET "/" for 127.0.0.1 at 2016-12-14 16:01:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (12.7ms)
+  Rendered static_pages/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 307ms (Views: 261.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 16:01:27 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u80Mr8l38Yni1Cq8x5yPQ2yXE3YnWT2zEbEazDVy2ALSqIA7wS8flrrbmVhYy+BjtSVg3l7T/W/fgebOFcsL/g==", "user"=>{"user_email"=>"nimmy@redpanthers.co", "company_id"=>"111", "role"=>"user"}, "commit"=>"OK"}
+Unpermitted parameters: company_id, role
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 15.3ms
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.1ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (33.2ms)
+Started GET "/" for 127.0.0.1 at 2016-12-14 16:05:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (13.5ms)
+  Rendered static_pages/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 289ms (Views: 245.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 16:05:25 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Q2jkNC0iI3lj3yqTdszP91X73mNeoVvMN20iiIIkVe0aC8E2Oxmkr2Az07SjFwfBOWc0fTwRbP+7UiIArFCqw==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com", "company_id"=>"111", "role"=>"user"}, "commit"=>"OK"}
+Unpermitted parameters: company_id, role
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 15.7ms
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.5ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (32.5ms)
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 16:07:25 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Q2jkNC0iI3lj3yqTdszP91X73mNeoVvMN20iiIIkVe0aC8E2Oxmkr2Az07SjFwfBOWc0fTwRbP+7UiIArFCqw==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com", "company_id"=>"111", "role"=>"user"}, "commit"=>"OK"}
+Unpermitted parameters: company_id, role
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 12.4ms
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (19.9ms)
+Started GET "/" for 127.0.0.1 at 2016-12-14 16:07:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (13.7ms)
+  Rendered static_pages/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 310ms (Views: 260.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 16:07:49 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uo5g69e6/p+CGNsdbR+51Ci3JwbDHXbScfjuJ3UhLnw76+x/3+IQgNoXaPnySNb08QVUrrqXtg6/yBIlVZj9gA==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com"}, "commit"=>"OK"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 15.5ms
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (24.0ms)
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 16:09:04 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uo5g69e6/p+CGNsdbR+51Ci3JwbDHXbScfjuJ3UhLnw76+x/3+IQgNoXaPnySNb08QVUrrqXtg6/yBIlVZj9gA==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com"}, "commit"=>"OK"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 13.0ms
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (19.3ms)
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 16:09:08 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uo5g69e6/p+CGNsdbR+51Ci3JwbDHXbScfjuJ3UhLnw76+x/3+IQgNoXaPnySNb08QVUrrqXtg6/yBIlVZj9gA==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com"}, "commit"=>"OK"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 18.4ms
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (19.5ms)
+Started GET "/" for 127.0.0.1 at 2016-12-14 16:09:37 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (12.7ms)
+  Rendered static_pages/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 292ms (Views: 247.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 16:10:00 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YbrVZc/lUsRlDv0g4EFdoERUQtcoDDV94ILQY8RRQsYI31nxx7282z0BTsR/FjKAneYxf1GG9aEusixh5OiROg==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com"}, "commit"=>"OK"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+UserMailer#welcome_email: processed outbound mail in 16.6ms
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (25.3ms)
+Started GET "/" for 127.0.0.1 at 2016-12-14 16:19:46 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (12.7ms)
+  Rendered static_pages/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 305ms (Views: 264.7ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 16:20:19 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Shq3Z8TQFrLXKYAiyBflFaGvjcDhfORdM2tuHy+VZe4jfzvzzIj4rY8mM8ZXQIo1eB3+aJj2JIH9W5IdDyy2Eg==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com"}, "commit"=>"OK"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering user_mailer/welcome_email.html.erb
+  Rendered user_mailer/welcome_email.html.erb (0.5ms)
+UserMailer#welcome_email: processed outbound mail in 223.4ms
+Sent mail to nimmyvipin25@gmail.com (5143.0ms)
+Date: Wed, 14 Dec 2016 16:20:19 +0530
+From: anjanakrish.p@gmail.com
+To: nimmyvipin25@gmail.com
+Message-ID: <585123eb74f2b_2c8430702e4520ad@Dell-Vostro.mail>
+=======
   Rendering /home/anjana/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /home/anjana/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
   Rendered /home/anjana/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
@@ -54996,12 +55648,358 @@ Date: Mon, 19 Dec 2016 17:58:04 +0530
 From: twitterclap@gmail.com
 To: archanakrishnan.p@gmail.com
 Message-ID: <5857d254b53a6_2c612d7986015944@anjana-HP-15-Notebook-PC.mail>
+>>>>>>> anjana/master
 Subject: Welcome to My Awesome Site
 Mime-Version: 1.0
 Content-Type: text/html;
  charset=UTF-8
 Content-Transfer-Encoding: 7bit
 
+<<<<<<< HEAD
+<h1>hai</h1>
+Redirected to http://localhost:3000/
+Completed 302 Found in 5386ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-14 16:20:24 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (3.5ms)
+  Rendered static_pages/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 48ms (Views: 40.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-14 16:21:01 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6JZkGE4UcMuZjVvJDNRUI1sP/jPuoKEbHwprE2wDgMCB8+iMRkye1MGC6C2TgzsDgr2Nm5cqYcfROpcRTLpTPA==", "user"=>{"user_email"=>"nimmyvipin25@gmail.com"}, "commit"=>"OK"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering user_mailer/welcome_email.html.erb
+  Rendered user_mailer/welcome_email.html.erb (0.3ms)
+UserMailer#welcome_email: processed outbound mail in 7.8ms
+Sent mail to nimmyvipin25@gmail.com (4939.3ms)
+Date: Wed, 14 Dec 2016 16:21:01 +0530
+From: anjanakrish.p@gmail.com
+To: nimmyvipin25@gmail.com
+Message-ID: <585124156f75c_2c84307025852120@Dell-Vostro.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h1>hai</h1>
+Redirected to http://localhost:3000/
+Completed 302 Found in 4952ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-14 16:21:06 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (3.6ms)
+  Rendered static_pages/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 47ms (Views: 40.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-15 09:28:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 2700ms (Views: 2597.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-15 11:24:11 +0530
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-15 11:24:16 +0530
+Started GET "/users/auth/twitter/callback?oauth_token=FbV79AAAAAAAyMmCAAABWQELqEw&oauth_verifier=A0aRaNnHqJ5OIeabieVe2GnRrpW8ANXO" for 127.0.0.1 at 2016-12-15 11:24:28 +0530
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"FbV79AAAAAAAyMmCAAABWQELqEw", "oauth_verifier"=>"A0aRaNnHqJ5OIeabieVe2GnRrpW8ANXO"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from twitter at /home/nimmy/twitter-clap/app/controllers/omniauth_callbacks_controller.rb:3)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "701829520551063553"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-12-15 05:54:32 UTC], ["sign_in_count", 2], ["updated_at", 2016-12-15 05:54:32 UTC], ["id", 32]]
+  [1m[35m (90.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 233ms (ActiveRecord: 93.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-15 11:24:32 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (36.8ms)
+  Rendered static_pages/index.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 133ms (Views: 80.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2016-12-15 11:24:47 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fjwOgU1RQevET9aJUs0MCNG9jV96f2H6GyjlYnYVakL8/ponXqa0/JV6ZEjUXg9AGPtmwDxK/uYKUZbPAGCp6Q==", "user"=>{"user_email"=>"nimmy@redpanthers.co"}, "commit"=>"OK"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering user_mailer/welcome_email.html.erb
+  Rendered user_mailer/welcome_email.html.erb (0.4ms)
+UserMailer#welcome_email: processed outbound mail in 245.4ms
+Sent mail to nimmy@redpanthers.co (6575.0ms)
+Date: Thu, 15 Dec 2016 11:24:47 +0530
+From: anjanakrish.p@gmail.com
+To: nimmy@redpanthers.co
+Message-ID: <58523027b6061_9593a60b64238a5@Dell-Vostro.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h1>Welcome</h1>
+Redirected to http://localhost:3000/
+Completed 302 Found in 6950ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-15 11:24:54 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (4.0ms)
+  Rendered static_pages/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 52ms (Views: 44.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-15 11:31:54 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (2.3ms)
+  Rendered static_pages/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 56ms (Views: 33.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/tweets/create" for 127.0.0.1 at 2016-12-15 11:32:00 +0530
+Processing by TweetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wyIC2ebCCAE8uNLE2iaJt2Jzs+0rzs57eZ0suAiebGjBbNSBTIZ7gnwVEsMFR/lnFaz2fMfCotSGuRCToyqb5A==", "tweet"=>{"message"=>""}, "commit"=>"tweet"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-15 11:32:00 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (2.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/tweets/create" for 127.0.0.1 at 2016-12-15 11:32:11 +0530
+Processing by TweetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HFojPOfwa/QD3L/NnSFsO7PvqkfQEa3u/9Pazenu110eFPVkTbQYd0Nxf8pCQBzrxDDv1jwdwUEA9+bmQlog0Q==", "tweet"=>{"message"=>"Hl.lp.;p./\r\n"}, "commit"=>"tweet"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "tweets" ("user_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 32], ["message", "Hl.lp.;p./\r\n"], ["created_at", 2016-12-15 06:02:11 UTC], ["updated_at", 2016-12-15 06:02:11 UTC]]
+  [1m[35m (100.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1993ms (ActiveRecord: 102.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-15 11:32:13 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (4.8ms)
+  Rendered static_pages/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 56ms (Views: 45.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-16 11:06:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 1232ms (Views: 1195.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-16 11:07:04 +0530
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-16 11:07:18 +0530
+  
+EOFError (end of file reached):
+  
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.2ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/nimmy/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Add (20161216054237)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161216054237"]]
+  [1m[35m (73.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-16 11:14:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-16 11:14:33 +0530
+Started GET "/users/auth/twitter/callback?oauth_token=fVuAyQAAAAAAyMmCAAABWQYpIdg&oauth_verifier=HTmJeAUG37bzuZBO73C5FbZbkjA0WYRI" for 127.0.0.1 at 2016-12-16 11:16:59 +0530
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"fVuAyQAAAAAAyMmCAAABWQYpIdg", "oauth_verifier"=>"HTmJeAUG37bzuZBO73C5FbZbkjA0WYRI"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from twitter at /home/nimmy/twitter-clap/app/controllers/omniauth_callbacks_controller.rb:3)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "twitter"], ["uid", "701829520551063553"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-12-16 05:47:13 UTC], ["last_sign_in_at", 2016-12-15 05:54:32 UTC], ["sign_in_count", 3], ["updated_at", 2016-12-16 05:47:13 UTC], ["id", 32]]
+  [1m[35m (132.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 233ms (ActiveRecord: 135.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-16 11:17:13 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (62.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (63.5ms)
+Completed 200 OK in 204ms (Views: 92.9ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAutoretweetToTweets (20161216055841)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "tweets" ADD "autoretweet" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161216055841"]]
+  [1m[35m (101.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2016-12-16 11:30:28 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (2.4ms)
+  Rendered static_pages/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 57ms (Views: 33.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/tweets/create" for 127.0.0.1 at 2016-12-16 11:31:12 +0530
+Processing by TweetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3etvCe1/hdGuY+m+DPP+1Zoxsokpu+tY67u2Ko+bE/ctizkVV168puN72Fj6AQBxXtFe8HLoecJd9+u0cKcCaw==", "tweet"=>{"message"=>"adsdff"}, "autoretweet"=>"1", "commit"=>"tweet"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "tweets" ("user_id", "message", "created_at", "updated_at", "autoretweet") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 32], ["message", "adsdff"], ["created_at", 2016-12-16 06:01:12 UTC], ["updated_at", 2016-12-16 06:01:12 UTC], ["autoretweet", "1"]]
+  [1m[35m (120.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3876ms (ActiveRecord: 123.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-16 11:31:16 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (2.8ms)
+  Rendered static_pages/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 45ms (Views: 32.4ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+Started POST "/tweets/create" for 127.0.0.1 at 2016-12-16 11:33:24 +0530
+Processing by TweetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8GLj5iye/h7ozjx41tidTh1b1Pbg8P+pMW/sXGAwD0MAArX6lr/HaaXWDZ4gKmPq2bs4j7ujbTOHI7HCnwwe3w==", "tweet"=>{"message"=>"jkjk"}, "commit"=>"tweet"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "tweets" ("user_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 32], ["message", "jkjk"], ["created_at", 2016-12-16 06:03:24 UTC], ["updated_at", 2016-12-16 06:03:24 UTC]]
+  [1m[35m (125.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3101ms (ActiveRecord: 128.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-16 11:33:27 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (3.5ms)
+  Rendered static_pages/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 48ms (Views: 41.6ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+Started GET "/" for 127.0.0.1 at 2016-12-16 11:36:52 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (3.7ms)
+  Rendered static_pages/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-16 11:37:57 +0530
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 32]]
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_admin.html.erb (3.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 48ms (Views: 38.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2016-12-16 11:52:08 +0530
+=======
 <!DOCTYPE html>
 <html>
   <head>
@@ -55287,3 +56285,4 @@ Processing by StaticPagesController#index as HTML
 Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.0ms)
 
 
+>>>>>>> anjana/master

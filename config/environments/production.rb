@@ -97,4 +97,5 @@ config.action_mailer.smtp_settings = {
   password:             'twitterclap123',
   authentication:       'plain',
   enable_starttls_auto: true  }
+
 end

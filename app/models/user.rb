@@ -14,6 +14,7 @@ class User < ApplicationRecord
       config.access_token_secret = secret
     end
   end
+
   def self.find_for_twitter_oauth(auth, signed_in_resource=nil, hash)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     if user
@@ -39,8 +40,6 @@ class User < ApplicationRecord
                             )
         user = User.where(:uid => auth.uid).first
       end
-        
-               
     end
   end
 end
