@@ -1,1 +1,12 @@
-<h1>Welcome</h1>
+
+ <h1>Hai,</h1>
+    <p>
+      Welcome to Twitter-Clap
+      <br>
+    </p>
+    <p>
+      To Sign-up to the site, just follow this link:
+      <%= url_for :controller => 'users', :action => 'index', :guid => @user.id_hash, :only_path => false, :host => 'localhost:3000' %>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+
