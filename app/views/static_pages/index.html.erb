@@ -11,8 +11,10 @@
         <%= f.submit "OK", class: 'btn btn-primary' %>
       <% end %>   
       <% end %>
+    <% elsif current_user.role == "user" %>
+        <%= render 'user' %>
     <% else %>
-      <%= render 'admin'%>
+      <%= render 'admin' %>
     <% end %>
 <% else %>
  
