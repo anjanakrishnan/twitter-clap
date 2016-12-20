@@ -1,8 +1,7 @@
 class TweetsController < ApplicationController
-
-	
 	def new
-    @newtweet = Tweet.new
+    @new_tweets = Tweet.new
+    @tweet = Tweet.new
   end
 
   def show  		
@@ -13,7 +12,6 @@ class TweetsController < ApplicationController
     @new_tweets = Tweet.where(:user_id => current_user.id).reverse
   end
   def create
-    
       check = params[:autoretweet]
       if check.nil?
   	    @tweet = Tweet.new(twitter_params)

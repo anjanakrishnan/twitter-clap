@@ -2,11 +2,10 @@
 <body>
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
 <table>
   <tr>
        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Invite</button>
-
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-sm">
@@ -17,9 +16,10 @@
         </div>
         <div class="modal-body">
           <p>    
-            <%= form_for (@user), :url => create_users_path(@user), :html => {:method => :post} do |f| %>
-              <%= f.label :user_email, "email" %>   
-              <%= f.text_field :user_email, class: "form-control" %>
+
+            <%= form_for User.new, :url => create_users_path(@user), :html => {:method => :post} do |f| %>
+              <%= f.label :email, "email" %>  
+              <%= f.text_field :email, class: "form-control" %>
               <%= f.hidden_field :company_id, value: current_user.company_id %>
               <%= f.hidden_field :role, value: "user" %>
               <br>
@@ -43,10 +43,9 @@
     </tr>
     <% end %> 
   <% end %>     
- 
 </table>
 </div>
-<div class="col-sm-8">
+<div class="col-sm-9">
   <div>
     <h2>Twitter Box</h2>
      <%= form_for Tweet.new do |f| %>      
@@ -54,7 +53,6 @@
         <%= check_box_tag :autoretweet %>
         <%= label_tag(:autoretweet, "Auto retweet") %>
         <%= f.submit "tweet", class: 'btn btn-md btn-pull-right btn-primary pull-right' %>
-        
         <% end %>
   
   </div>

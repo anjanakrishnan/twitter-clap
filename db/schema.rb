@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20161214095042) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "tweets", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "message"
@@ -27,13 +28,15 @@ ActiveRecord::Schema.define(version: 20161214095042) do
   create_table "tweets_users", force: :cascade do |t|
     t.integer  "tweet_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "message"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "autoretweet"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email"
+    t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 20161214095042) do
     t.string   "provider"
     t.string   "uid"
     t.integer  "company_id"
-    t.string   "user_email"
+    t.string   "id_hash"
     t.string   "role"
     t.string   "token"
     t.string   "secret"
