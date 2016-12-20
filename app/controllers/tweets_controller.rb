@@ -30,7 +30,7 @@ class TweetsController < ApplicationController
           @tweet_user.save
         end
       end
-    redirect_to root_path
+    redirect_to root_url
   end
   private
 
