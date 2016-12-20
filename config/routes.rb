@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   end    
   post '/users/create' => 'users#create', :as => :create_users
-  post '/tweets/create' => 'tweets#create', :as => :create_tweets
   resources :users 
   resources :tweets
   resources :companies 

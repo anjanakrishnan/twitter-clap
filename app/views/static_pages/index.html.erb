@@ -11,7 +11,12 @@
     <% end %>
     <% end %>
   <% else %>
-    <%= render 'admin'%>
+  <% if current_user.role == 'admin' %>
+    <%= render "admin"%>
+    <% else %>
+
+    <%= render "user"%>
+    <% end %>
   <% end %>
 
 <% else %>
