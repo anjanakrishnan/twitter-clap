@@ -36,7 +36,7 @@ gem 'omniauth-twitter'
 gem 'twitter-bootstrap-rails'
 gem 'actionmailer'
 gem "letter_opener", :group => :development
-gem 'twitter', '~> 4.6.2'
+gem 'twitter'
 gem 'devise',           '~> 4.2'
 gem 'devise_invitable', '~> 1.7.0'
 group :development, :test do
