@@ -11,39 +11,29 @@ class TweetsController < ApplicationController
   
   def index
     @new_tweets = Tweet.where(:user_id => current_user.id).reverse
-   
   end
   def create
     
       check = params[:autoretweet]
       if check.nil?
-
   	    @tweet = Tweet.new(twitter_params)
   	    @tweet.user_id = current_user.id 
   	    @tweet.save
-  	#    redirect_to root_path
       else
         @tweet = Tweet.new(twitter_params)
         @tweet.user_id = current_user.id 
         @tweet.save
         msg = Tweet.maximum('message')
-        
-        #company_id = User.where(:company_id => current_user.company_id)
-        #@role = @company_id.where(:role => "user")
         @role = User.where(:company_id => current_user.company_id, :role => "user")
         @role.each do |t|
           @tweet_user = Tweet.new
           @tweet_user.user_id = t.id
           @tweet_user.message = msg
-          #@tweet_user.tweet_id = last_id 
           @tweet_user.save
         end
-          
-
       end
     redirect_to root_path
   end
-
   private
 
   def twitter_params
