@@ -321,5 +321,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   require 'omniauth-twitter'
-  heroku config.omniauth :twitter, "Q4CyjPOFwa1Bh84nX5DFbhsa7", "IjHJ5intNMkClXmLJbw7X0PiBqBFG2w3Y2HSAn1ePw9d2Ahs2C"
+  config.omniauth :twitter, "Q4CyjPOFwa1Bh84nX5DFbhsa7", "IjHJ5intNMkClXmLJbw7X0PiBqBFG2w3Y2HSAn1ePw9d2Ahs2C"
 end
