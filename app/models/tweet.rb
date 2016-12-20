@@ -2,7 +2,7 @@ class Tweet < ApplicationRecord
 
   belongs_to :user
 
-	validates :user_id, :message, presence: true
+	validates :user_id, :message, presence: true ,autoretweet: false
 
   before_create :post_to_twitter
 
