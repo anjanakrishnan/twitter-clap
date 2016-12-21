@@ -1,3 +1,4 @@
+
 <% if user_signed_in? %>
     <% if current_user.company_id.nil? %>
       <%= form_for (@company) do |f| %>
@@ -16,8 +17,8 @@
       <%= render 'admin' %>
     <% end %>
 
-<% else %>
- 
-  <%= link_to "Sign in via Twitter", user_twitter_omniauth_authorize_path %>  or 
-  <%= link_to "Sign up with Twitter", user_twitter_omniauth_authorize_path %>
+<% else %> 
+<div style="background-color: lightgrey ; width: 150px">
+  <%= link_to "Sign in via Twitter", user_twitter_omniauth_authorize_path %>  
+  </div>
 <% end %>
