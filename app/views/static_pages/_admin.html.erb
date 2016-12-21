@@ -53,7 +53,7 @@
 <div class="col-sm-9">
   <div>
     <h2>Twitter Box</h2>
-     <%= form_for Tweet.new, :url => create_tweets_path(Tweet.new), :html => {:method => :post} do |f| %>      
+     <%= form_for Tweet.new do |f| %>      
         <%= f.text_area :message, class: "form-control" %>
        <%= check_box_tag(:autoretweet) %>
        <%= label_tag( "Autoretweet") %>
