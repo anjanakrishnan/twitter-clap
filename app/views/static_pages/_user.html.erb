@@ -5,11 +5,12 @@
 
   <% @usertweet.each do |t| %>
   <% Tweet.where(:tweet_id => t.tweet_id).each do |c| %>
+  <% u=User.where(:id => c.user_id) %>
   <div class="qa-message-list" id="wallmessages">
             <div class="message-item" id="m16">
               <div class="message-inner">
                 <div class="message-head clearfix">
-                  <div class="avatar pull-left"><a href="./index.php?qa=user&qa_1=Oleg+Kolesnichenko"><img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"></a></div>
+                  <div class="avatar pull-left"></div>
                   <div class="user-detail">
                     <h5 class="handle"><%= current_user.name %></h5>
                     <div class="post-meta">
@@ -20,7 +21,7 @@
                         </span>
                         <span class="qa-message-who">
                           <span class="qa-message-who-pad">by </span>
-                          <span class="qa-message-who-data"><a href="./index.php?qa=user&qa_1=Oleg+Kolesnichenko"><%= current_user.name %></a></span>
+                          <span class="qa-message-who-data"><%= u.name %></span>
                         </span>
                       </div>
                     </div>
