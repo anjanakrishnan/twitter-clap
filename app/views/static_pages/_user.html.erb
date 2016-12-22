@@ -1,36 +1,42 @@
 <div class="container">
   <div class="row">
     <h2>Time Line</h2>
-<% if @new_tweets %>
-  <% @new_tweets.each do |t| %>
+<% if @usertweet %>
+
+  <% @usertweet.each do |t| %>
+  <% Tweet.where(:tweet_id => t.tweet_id).each do |c| %>
+  <% User.where(:id => c.user_id).each do |u| %>
   <div class="qa-message-list" id="wallmessages">
             <div class="message-item" id="m16">
               <div class="message-inner">
                 <div class="message-head clearfix">
-                  <div class="avatar pull-left"><a href="./index.php?qa=user&qa_1=Oleg+Kolesnichenko"><img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"></a></div>
+                  <div class="avatar pull-left"></div>
                   <div class="user-detail">
-                    <h5 class="handle"><%= current_user.name %></h5>
+                    <h5 class="handle"><%= u.name%></h5>
                     <div class="post-meta">
                       <div class="asker-meta">
                         <span class="qa-message-what"></span>
                         <span class="qa-message-when">
-                          <span class="qa-message-when-data"><%= t.created_at.strftime("%b %d,%Y") %></span>
+                          <span class="qa-message-when-data"><%= t.created_at.strftime("%b %d,%Y %R %z").in_time_zone("Chennai") %></span>
                         </span>
                         <span class="qa-message-who">
                           <span class="qa-message-who-pad">by </span>
-                          <span class="qa-message-who-data"><a href="./index.php?qa=user&qa_1=Oleg+Kolesnichenko"><%= current_user.name %></a></span>
+                          <span class="qa-message-who-data"><%= u.name %></span>
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
               <div class="qa-message-content">
-                <%= t.message %>
+                <%= c.message %>
               </div>
               </div>
             </div>
   </div>
   <% end %>
   <% end %>
+   <% end %>
+   <% end %>
+
   
 </div>
