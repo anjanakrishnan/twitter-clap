@@ -2,6 +2,7 @@
 <html>
   <head>
 
+
     <title>Twitter clap</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all',
@@ -22,7 +23,8 @@
         <%= link_to "Twitter Clap", '#', id: "logo" %>
           <nav>
             <ul class="nav navbar-nav navbar-right" style="color:red;">
-               <%= label_tag("Welcome") %>&nbsp;
+               <%= label_tag("Welcome") %>
+               &nbsp;
                &nbsp;
                &nbsp;
                <%= current_user.name %>
