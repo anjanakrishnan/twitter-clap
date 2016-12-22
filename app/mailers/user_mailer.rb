@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
     @user = user
     @hash = hash
     
-    @url  = 'http://localhost:3000/'+@hash
+    @url  = 'https://agile-everglades-78765.herokuapp.com/'+@hash
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
 end
