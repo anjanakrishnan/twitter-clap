@@ -39,7 +39,10 @@
   <%if @company_id %>
     <% @company_id.reverse.each do |f| %>
      <tr>
-       <td> <%= f.name %></td>
+       <td>
+        <%= f.name %>
+         <img src="<%= f.profile_image_url %>">
+        </td>
     </tr>
     <% end %> 
   <% end %>     

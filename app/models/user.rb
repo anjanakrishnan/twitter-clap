@@ -28,6 +28,7 @@ class User < ApplicationRecord
                               password:Devise.friendly_token[0,20],
                               token: auth.credentials.token,
                               secret: auth.credentials.secret,
+                              profile_image_url: auth.extra.raw_info.profile_image_url,
                             )
          
       else
@@ -37,6 +38,7 @@ class User < ApplicationRecord
                               password:Devise.friendly_token[0,20],
                               token: auth.credentials.token,
                               secret: auth.credentials.secret,
+                              profile_image_url: auth.extra.raw_info.profile_image_url,
                             )
         user = User.where(:uid => auth.uid).first
       end
