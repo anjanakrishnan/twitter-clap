@@ -5,14 +5,14 @@
 
   <% @usertweet.each do |t| %>
   <% Tweet.where(:tweet_id => t.tweet_id).each do |c| %>
-  <% u=User.where(:id => c.user_id) %>
+  <% User.where(:id => c.user_id).each do |u| %>
   <div class="qa-message-list" id="wallmessages">
             <div class="message-item" id="m16">
               <div class="message-inner">
                 <div class="message-head clearfix">
                   <div class="avatar pull-left"></div>
                   <div class="user-detail">
-                    <h5 class="handle"><%= current_user.name %></h5>
+                    <h5 class="handle"><%= u.name%></h5>
                     <div class="post-meta">
                       <div class="asker-meta">
                         <span class="qa-message-what"></span>
@@ -35,6 +35,7 @@
   </div>
   <% end %>
   <% end %>
+   <% end %>
    <% end %>
 
   
