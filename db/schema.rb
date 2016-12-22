@@ -21,14 +21,6 @@ ActiveRecord::Schema.define(version: 20161222070636) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "retweets", force: :cascade do |t|
-    t.integer  "tweet_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "message"
-  end
-
   create_table "tweets", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "message"
