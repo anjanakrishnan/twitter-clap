@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <h2>Time Line</h2>
-<% if @usertweets %>
-  <% @usertweets.each do |t| %>
-  <% @clap = Tweet.where(:tweet_id => @usertweets.tweet_id) %>
-  <% @clap.each do |c| %>
+<% if @usertweet %>
+
+  <% @usertweet.each do |t| %>
+  <% Tweet.where(:tweet_id => t.tweet_id).each do |c| %>
   <div class="qa-message-list" id="wallmessages">
             <div class="message-item" id="m16">
               <div class="message-inner">
@@ -34,6 +34,7 @@
   </div>
   <% end %>
   <% end %>
-  <% end %>
+   <% end %>
+
   
 </div>
