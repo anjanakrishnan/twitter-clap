@@ -41,6 +41,7 @@
      <tr>
        <td>
         <img src="<%= f.profile_image_url %>">
+        <div>
         <%= f.name %>
          <br>
          <br>&nbsp;&nbsp;
@@ -48,6 +49,7 @@
                      data: { confirm: "Are you sure?" },
                      method: :delete,  class: 'btn btn-danger btn-sm' %>
         </td>
+      </div>
     </tr>
     <% end %> 
   <% end %>     
