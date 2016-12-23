@@ -29,7 +29,11 @@
                &nbsp;
                <%= current_user.name %>
               <li><%= link_to "Logout", destroy_user_session_path,:method => :delete %></li>
-             
+             <li><% if current_user.role == "user" %>
+                <%= link_to "Delete", user_path(current_user.id),
+                     data: { confirm: "Are you sure?" },
+                     method: :delete %>
+              <% end %> </li> 
             </ul>
           </nav>
         <% else %>

@@ -23,6 +23,10 @@ class UsersController < ApplicationController
   end
  end
 
+ def destroy
+    User.destroy(params[:id])
+    redirect_to root_url
+ end
   private
     def email_params
       params.require(:user).permit(:email, :company_id, :role)
