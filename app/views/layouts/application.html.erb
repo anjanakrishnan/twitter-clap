@@ -33,8 +33,7 @@
                 <%= link_to "Delete", user_path(current_user.id),
                      data: { confirm: "Are you sure?" },
                      method: :delete %>
-                     <% else %>
-                     <% if current_user.role == "admin" %>
+                    <% else %>
                 <%= link_to "Delete", tweet_path(current_user.id),
                      data: { confirm: "Are you sure?" },
                      method: :delete %>
