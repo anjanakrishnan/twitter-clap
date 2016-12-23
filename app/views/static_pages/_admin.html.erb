@@ -44,12 +44,12 @@
         <div>
         <%= f.name %>
          <br>
-         <br>&nbsp;&nbsp;
          <%= link_to "Delete", user_path(f.id),
                      data: { confirm: "Are you sure?" },
                      method: :delete,  class: 'btn btn-danger btn-sm' %>
+        </div>
         </td>
-      </div>
+     
     </tr>
     <% end %> 
   <% end %>     
