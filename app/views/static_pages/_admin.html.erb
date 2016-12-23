@@ -41,12 +41,14 @@
      <tr>
        <td>
         <img src="<%= f.profile_image_url %>">
-        <%= f.name %>
-         <br>
-         <br>
+      </td>
+      <td>
+        <tr>
+        <%= f.name %></tr>
+        <tr>
          <%= link_to "Delete", user_path(f.id),
                      data: { confirm: "Are you sure?" },
-                     method: :delete,  class: 'btn btn-danger btn-sm' %>
+                     method: :delete,  class: 'btn btn-danger btn-sm' %></tr>
         </td>
     </tr>
     <% end %> 
