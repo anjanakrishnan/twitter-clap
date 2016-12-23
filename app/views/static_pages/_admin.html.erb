@@ -38,8 +38,9 @@
   </tr>
   <%if @company_id %>
     <% @company_id.reverse.each do |f| %>
+    <div>
      <tr>
-      <div>
+      
        <td>
         <img src="<%= f.profile_image_url %>">
         <div>
@@ -50,8 +51,9 @@
                      method: :delete,  class: 'btn btn-danger btn-sm' %>
         </div>
         </td>
-     </div>
+     
     </tr>
+    </div>
     <% end %> 
   <% end %>     
 </table>
