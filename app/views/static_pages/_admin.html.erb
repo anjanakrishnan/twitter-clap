@@ -40,8 +40,9 @@
     <% @company_id.reverse.each do |f| %>
      <tr>
        <td>
+        <img src="<%= f.profile_image_url %>">
         <%= f.name %>
-         <img src="<%= f.profile_image_url %>">
+         <br>
          <%= link_to "Delete", user_path(f.id),
                      data: { confirm: "Are you sure?" },
                      method: :delete,  class: 'btn btn-danger btn-sm' %>
