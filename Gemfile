@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'local_time'
 gem 'omniauth'
 gem 'omniauth-twitter' 
 gem 'twitter-bootstrap-rails'
