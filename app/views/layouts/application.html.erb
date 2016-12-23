@@ -22,7 +22,8 @@
       <% if user_signed_in? %>
         <%= link_to "Twitter Clap", '#', id: "logo" %>
           <nav>
-            <ul class="nav navbar-nav navbar-right" style="color:red;">
+            <br>
+            <ul class="nav navbar-nav navbar-right">
               <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><%= current_user.name %>
                   <span class="caret"></span></button>
