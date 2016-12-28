@@ -1,8 +1,42 @@
 {
   "Unit Tests": {
     "coverage": {
+      "/home/dell/workspace/project/twitter/twitter-clap/app/models/company.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/models/tweets_user.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/models/tweet.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ]
     },
-    "timestamp": 1482913532
+    "timestamp": 1482922035
   },
   "MiniTest": {
     "coverage": {
@@ -40,10 +74,36 @@
         null,
         null
       ],
+      "/home/dell/workspace/project/twitter/twitter-clap/test/integration/routes_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
       "/home/dell/workspace/project/twitter/twitter-clap/test/mailers/user_mailer_test.rb": [
         1,
         null,
         1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -76,6 +136,12 @@
         1,
         null,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -134,16 +200,6 @@
         null,
         null
       ],
-      "/home/dell/workspace/project/twitter/twitter-clap/test/routes/static_pages_test.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
       "/home/dell/workspace/project/twitter/twitter-clap/app/models/company.rb": [
         1,
         1,
@@ -166,7 +222,7 @@
         1,
         1,
         null,
-        1,
+        null,
         null,
         1,
         null,
@@ -176,6 +232,26 @@
         0,
         0,
         null,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/mailers/user_mailer.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/mailers/application_mailer.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/home/dell/workspace/project/twitter/twitter-clap/app/controllers/static_pages_controller.rb": [
@@ -223,6 +299,45 @@
         null
       ]
     },
-    "timestamp": 1482915122
+    "timestamp": 1482923193
+  },
+  "Integration Tests": {
+    "coverage": {
+      "/home/dell/workspace/project/twitter/twitter-clap/app/models/company.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/models/tweets_user.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/models/tweet.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1482917257
   }
 }
