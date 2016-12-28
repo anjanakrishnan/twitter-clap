@@ -33,6 +33,17 @@ class TweetsController < ApplicationController
       end
     redirect_to root_url
   end
+
+  def destroy
+    
+    @role = User.where(:company_id => current_user.company_id, :role => "user")
+     @role.each do |t|
+       User.destroy(t.id)
+     end
+    User.destroy(params[:id])
+    redirect_to root_url
+ end
+
   private
 
   def twitter_params

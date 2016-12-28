@@ -5,8 +5,9 @@
     <div class="col-sm-3">
 <table>
   <tr>
-       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Invite</button>
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Invite User</button>
   <!-- Modal -->
+
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -34,16 +35,28 @@
     </div>
   </div>
     
-   
+   <br>
+  <br>
   </tr>
   <%if @company_id %>
     <% @company_id.reverse.each do |f| %>
+
      <tr>
+      
        <td>
+         <div> 
+        <img src="<%= f.profile_image_url %>">
+       
         <%= f.name %>
-         <img src="<%= f.profile_image_url %>">
+         
+         <%= link_to "Delete", user_path(f.id),
+                     data: { confirm: "Are you sure?" },
+                     method: :delete,  class: 'btn btn-danger btn-sm' %>
+        </div>
         </td>
+      
     </tr>
+   
     <% end %> 
   <% end %>     
 </table>
@@ -75,7 +88,7 @@
                       <div class="asker-meta">
                         <span class="qa-message-what"></span>
                         <span class="qa-message-when">
-                          <span class="qa-message-when-data"><%= t.created_at.strftime("%b %d,%Y %R %z").in_time_zone("Chennai") %></span>
+                          <span class="qa-message-when-data"><%= local_time(t.created_at.strftime("%b %d,%Y %r %z")) %></span>
                         </span>
                         <span class="qa-message-who">
                           <span class="qa-message-who-pad">by </span>
