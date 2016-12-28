@@ -2,8 +2,8 @@ connection: &connection
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: postgres
-  password: rajana
+  username: dell
+  password: dell
 
 development:
   <<: *connection
