@@ -83,7 +83,7 @@
         1,
         1,
         1,
-        0,
+        null,
         null,
         null,
         null
@@ -225,6 +225,7 @@
       "/home/dell/workspace/project/twitter/twitter-clap/app/models/company.rb": [
         1,
         1,
+        null,
         null
       ],
       "/home/dell/workspace/project/twitter/twitter-clap/app/models/tweets_user.rb": [
@@ -276,27 +277,6 @@
         1,
         null
       ],
-      "/home/dell/workspace/project/twitter/twitter-clap/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/dell/workspace/project/twitter/twitter-clap/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/home/dell/workspace/project/twitter/twitter-clap/app/helpers/companies_helper.rb": [
-        1,
-        null
-      ],
-      "/home/dell/workspace/project/twitter/twitter-clap/app/helpers/static_pages_helper.rb": [
-        1,
-        null
-      ],
-      "/home/dell/workspace/project/twitter/twitter-clap/app/helpers/tweets_helper.rb": [
-        1,
-        null
-      ],
       "/home/dell/workspace/project/twitter/twitter-clap/app/controllers/static_pages_controller.rb": [
         1,
         1,
@@ -318,6 +298,27 @@
         1,
         null,
         null,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/helpers/companies_helper.rb": [
+        1,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/helpers/static_pages_helper.rb": [
+        1,
+        null
+      ],
+      "/home/dell/workspace/project/twitter/twitter-clap/app/helpers/tweets_helper.rb": [
+        1,
         null
       ],
       "/home/dell/workspace/project/twitter/twitter-clap/app/controllers/tweets_controller.rb": [
@@ -375,7 +376,7 @@
         null
       ]
     },
-    "timestamp": 1483096989
+    "timestamp": 1483103558
   },
   "Integration Tests": {
     "coverage": {
