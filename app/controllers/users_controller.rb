@@ -11,7 +11,10 @@ class UsersController < ApplicationController
  end
  
  def create
-  @new_user = User.new(:email => email_params[:email], :company_id => email_params[:company_id], :role => email_params[:role], :password => "123456789")
+  if email_params[:email].nil?
+  else
+
+    @new_user = User.new(:email => email_params[:email], :company_id => email_params[:company_id], :role => email_params[:role], :password => "123456789")
   if @new_user.save
     @user_id = User.maximum('id')
     @admin_id = current_user.id
@@ -21,6 +24,7 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
  end
+end
 
  def destroy
     User.destroy(params[:id])

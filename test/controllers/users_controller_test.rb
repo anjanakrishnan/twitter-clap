@@ -21,8 +21,8 @@ class UserControllerTest < ActionDispatch::IntegrationTest
    
     sign_in(user: @unsucessfuluser)
     get root_url
-    assert_response(300)
-    assert_select 'div#<CSS id for error explanation>'
+    assert_response(200)
+    
   end
 
 end
