@@ -3,12 +3,13 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
 	def setup
-    @user = User.new(email: "user@example.com", 
-    	name: "Joe", provider: "twitter",uid: "803472843681865728", company_id: "7", 
-    	role: "admin", token: "803472843681865728-Cfiz4gyBN2b39AFUKDUcXK333WOtzDW",
+    @user = User.new(email: "user@example.com", name: "Joe",
+      provider: "twitter",uid: "803472843681865728", company_id: "7", role: "admin",
+    	token: "803472843681865728-Cfiz4gyBN2b39AFUKDUcXK333WOtzDW",
     	secret: "6FWK6qo99SarcPPsjqkhiLkkIwQa5wYOZKJJdkdoN2vKi", 
     	profile_image_url: "http://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png", 
-    	encrypted_password: "$2a$11$3Ww8IvpZgX5YlVH7xVqi3.hslbEb9JU.DtStZEuptUiIy7XgLeK1K", password: "rajanakk" )
+    	encrypted_password: "$2a$11$3Ww8IvpZgX5YlVH7xVqi3.hslbEb9JU.DtStZEuptUiIy7XgLeK1K",
+      password: "rajanakk" )
   end
 
   

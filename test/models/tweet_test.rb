@@ -6,7 +6,8 @@ class TweetTest < ActiveSupport::TestCase
     @tweet = Tweet.new(user_id:"1", message:"message example", tweet_id:"93993")
   end
 
-  
+	
+
   # test "the truth" do
   #   assert true
   # end
