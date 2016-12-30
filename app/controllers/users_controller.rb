@@ -3,7 +3,6 @@ class UsersController < ApplicationController
  def index
   hash = params[:guid]
   session[:hash_id] = hash
- # current_user.update!(:id_hash => hash)
   redirect_to root_url
  end
  
