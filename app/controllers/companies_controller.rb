@@ -8,18 +8,23 @@ class CompaniesController < ApplicationController
       @company = Company.new(company_params)
       @company.save
       @email_check = User.all
-      if user_params[:email] == "" 
-        flash[:danger] = "cannot be blank"
-        redirect_to root_url
-      else 
+      if user_params[:email] == ""  
+        if company_params[:name] == ""
+          redirect_to root_url
+        else
+          redirect_to root_url
+        end
+      elsif company_params[:name] == ""
+          redirect_to root_url
+        else
         @email_check.each do |c|
           if c.email == user_params[:email]
             flash[:danger] = "cannot be blank"
             redirect_to root_url
           else
              @user = current_user
-            last_id = Company.maximum('id')
-            @user.update(company_id: last_id)
+            
+            @user.update(company_id: @company.id)
             @user.update!(email: user_params[:email])
             @user.update!(role: user_params[:role])
             redirect_to root_url
