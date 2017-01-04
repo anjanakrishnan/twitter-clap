@@ -16,11 +16,14 @@ class UsersController < ApplicationController
 
     @new_user = User.new(:email => email_params[:email], :company_id => email_params[:company_id], :role => email_params[:role], :password => "123456789")
   if @new_user.save
-    @user_id = User.maximum('id')
+    @user_id = @new_user.id
     @admin_id = current_user.id
     hash = Digest::SHA512.hexdigest("#{@user_id}")
     @new_user.update!(id_hash: hash)
     UserMailer.welcome_email(@new_user,hash).deliver_now
+    redirect_to root_url
+  else
+    flash[:danger] = "This email is already used"
     redirect_to root_url
   end
  end

@@ -21,13 +21,14 @@ class TweetsController < ApplicationController
         @tweet = Tweet.new(twitter_params)
         @tweet.user_id = current_user.id 
         @tweet.save
+        tweetid = @tweet.tweet_id
         last_id = Tweet.maximum('tweet_id')
 
         @role = User.where(:company_id => current_user.company_id, :role => "user")
         @role.each do |t|
           @tweet_user = TweetsUser.new
           @tweet_user.user_id = t.id
-          @tweet_user.tweet_id = last_id
+          @tweet_user.tweet_id = tweetid
           @tweet_user.save
         end
       end

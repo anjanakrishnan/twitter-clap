@@ -21,6 +21,7 @@ group :test do
 	gem "minitest", "~> 5.1"
 	gem "minitest-rails"
 end
+gem 'rails-controller-testing'
 gem 'simplecov', :require => false, :group => :test
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
